@@ -1,0 +1,39 @@
+div.playerOne {
+    outline: solid red 2px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin: 2px;
+}
+
+div.playerTwo {
+    outline: solid blue 2px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    margin: 2px;
+}
+
+.middle {
+    outline: solid lightgreen 2px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin: 2px;
+}
+
+.actions {
+    outline: solid purple 4px;
+    display: grid;
+}
+
+li {
+    list-style: none;
+}
+
+.topArea {
+    outline: solid orangered 2px;
+    margin: 2px;
+    background-color: rgba(255, 0, 0, .2);
+    height: 50vh;
+    grid-row: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}

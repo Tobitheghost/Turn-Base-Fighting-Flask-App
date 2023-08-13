@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>{% block title %}Base{% endblock %}</title>
+</head>
+<body>
+    <div class="actions">
+        <div class="topArea">
+            <form method="post" action="/fight">
+                {% block toparea %} <p> lets fight </p>
+                <input id="startFight" type="submit" value=start_fight name=start_fight>
+                {% endblock %}
+            </form>
+        </div>
+        <div class="playerOne">
+            <p class="playerOne">
+                {% block p1Name %}Player 1{% endblock %}<br>{% block p1Health %}Health{% endblock %}
+            </p>
+            <ul>
+                {% block p1Moves %}
+                <li><button>attack 1</button></li>
+                <li><button>attack 2</button></li>
+                <li><button>attack 3</button></li>
+                {% endblock %}
+            </ul>
+        </div>
+        <div class="middle">  
+        </div>
+        <div class="playerTwo">
+            <p class="playerTwo">
+                {% block p2Name %}Player 1{% endblock %}<br>{% block p2Health %}Health{% endblock %}
+            </p>
+            <ul>
+                {% block p2Moves %}
+                <li><button>attack 1</button></li>
+                <li><button>attack 2</button></li>
+                <li><button>attack 3</button></li>
+                {% endblock %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

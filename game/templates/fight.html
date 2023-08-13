@@ -1,0 +1,50 @@
+{% extends "base.html"%}
+{% block title %}FIGHT{% endblock %}
+
+{% block p1Name %} {{p1_name}} {% endblock %}
+{% block p1Health %} {{p1_health}} {% endblock %}
+
+{% block p2Name %} {{p2_name}} {% endblock %}
+{% block p2Health %} {{p2_health}} {% endblock %}
+
+
+{% block p1Moves %}
+<form method="post" action="/fight">
+    <input type="hidden" name="player" value="p1">
+    {% for moves in p1_moves %}
+    <li>
+        <input id="player1_moves" type="submit" value={{moves}} name="choice">
+    </li>
+    {% endfor %}
+</form>
+{% endblock %}
+{% block p2Moves %}
+<form method="post" action="/fight">
+    <input type="hidden" name="player" value="p2">
+    {% for moves in p2_moves %}
+    <li>
+        <input id="player2_moves" type="submit" value={{moves}} name="choice">
+    </li>
+    {% endfor %}
+</form>
+{% endblock %}
+
+{% block toparea %}
+    <p> {{start_message}} </p>
+    {% if WHOSTURN == "player1" %}
+        <style>
+            #player2_moves {
+                visibility: hidden;
+            }
+        </style>
+    {% elif WHOSTURN == "player2" %}
+        <style>
+            #player1_moves {
+                visibility: hidden;
+            }
+        </style>
+    {% elif WHOSTURN == 'start_fight' %}
+        
+    {% endif %}
+    
+{% endblock %}
